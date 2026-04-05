@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#5C0601">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Kings Aqomplice">
+  <meta name="description" content="Contact Kings Aqomplice — Request consultation or inquiry.">
+  <title>Contact | Kings Aqomplice</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="app-shell">
+  <header class="app-header-desktop bg-white">
+    <div class="max-w-6xl mx-auto px-6 py-4">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <a href="/" class="block"><img src="/assets/KINGS%20AQOMPLICE%20K-LOGO%20Color.png" alt="Kings Aqomplice" class="logo h-11 md:h-14 w-auto"></a>
+        <nav aria-label="Main navigation">
+          <ul class="flex flex-wrap gap-6 md:gap-8 text-sm font-medium uppercase tracking-wide">
+            <li><a href="/" class="nav-link-hover text-secondary hover:text-primary transition-colors">Home</a></li>
+            <li><a href="/about.html" class="nav-link-hover text-secondary hover:text-primary transition-colors">About</a></li>
+            <li><a href="/practice-areas.html" class="nav-link-hover text-secondary hover:text-primary transition-colors">Practice Areas</a></li>
+            <li><a href="/insights.html" class="nav-link-hover text-secondary hover:text-primary transition-colors">Insights</a></li>
+            <li><a href="/contact.html" class="text-primary border-b-2 border-primary pb-1">Contact</a></li>
+            <li><a href="/admin/login" class="text-accent hover:text-primary font-medium transition-colors">Sign In</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <header class="app-header-mobile">
+    <div class="px-4 py-3 flex items-center justify-between">
+      <a href="/" class="block"><img src="/assets/KINGS%20AQOMPLICE%20K-LOGO%20Color.png" alt="Kings Aqomplice" class="logo h-10 w-auto"></a>
+      <a href="/admin/login" class="flex items-center justify-center p-2 -mr-2 text-primary hover:text-accent transition-colors" aria-label="Sign in">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main class="app-main pt-14 md:pt-0">
+    <section class="max-w-6xl mx-auto px-6 py-16 bg-primary/5">
+      <h1 class="section-heading scroll-reveal mb-8">Contact</h1>
+      <p class="scroll-reveal scroll-reveal-delay-1 text-secondary max-w-2xl mb-12 leading-relaxed">
+        Request a consultation or submit an inquiry. All communications are confidential. We will respond within 2 business days.
+      </p>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <section>
+          <h2 class="font-serif text-xl text-primary font-semibold mb-6">Consultation Request</h2>
+          <form id="consultation-form" action="/api/booking" method="POST" class="space-y-4">
+            <input type="hidden" name="_csrf" id="csrf-token" value="">
+            <div>
+              <label for="fullName" class="block text-sm font-medium text-secondary mb-1">Full Name</label>
+              <input type="text" id="fullName" name="fullName" required class="input-field" placeholder="Full legal name">
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-secondary mb-1">Email</label>
+              <input type="email" id="email" name="email" required class="input-field" placeholder="email@example.com">
+            </div>
+            <div>
+              <label for="phone" class="block text-sm font-medium text-secondary mb-1">Phone</label>
+              <input type="tel" id="phone" name="phone" required class="input-field" placeholder="+1 (555) 000-0000">
+            </div>
+            <div>
+              <label for="preferredDate" class="block text-sm font-medium text-secondary mb-1">Preferred Date</label>
+              <input type="date" id="preferredDate" name="preferredDate" class="input-field">
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-secondary mb-1">Message</label>
+              <textarea id="message" name="message" rows="4" class="input-field" placeholder="Brief description of your matter"></textarea>
+            </div>
+            <button type="submit" class="btn-primary" id="consultation-submit">Submit Request</button>
+          </form>
+          <p id="form-feedback" class="mt-4 text-sm hidden"></p>
+          <noscript>
+            <p class="mt-4 text-sm text-secondary">Form submits to server. You will be redirected after submission.</p>
+          </noscript>
+        </section>
+
+        <section>
+          <h2 class="font-serif text-xl text-primary font-semibold mb-6">General Inquiry</h2>
+          <form id="contact-form" action="/api/contact" method="POST" class="space-y-4">
+            <input type="hidden" name="_csrf" id="csrf-token-contact" value="">
+            <div>
+              <label for="contactName" class="block text-sm font-medium text-secondary mb-1">Name</label>
+              <input type="text" id="contactName" name="name" required class="input-field" placeholder="Your name">
+            </div>
+            <div>
+              <label for="contactEmail" class="block text-sm font-medium text-secondary mb-1">Email</label>
+              <input type="email" id="contactEmail" name="email" required class="input-field" placeholder="email@example.com">
+            </div>
+            <div>
+              <label for="contactMessage" class="block text-sm font-medium text-secondary mb-1">Message</label>
+              <textarea id="contactMessage" name="message" rows="4" required class="input-field" placeholder="How can we help?"></textarea>
+            </div>
+            <button type="submit" class="btn-primary" id="contact-submit">Send Inquiry</button>
+          </form>
+          <p id="contact-feedback" class="mt-4 text-sm hidden"></p>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <nav class="app-bottom-nav" aria-label="App navigation">
+    <div class="app-bottom-nav-inner">
+      <a href="/" class="app-nav-item" data-href="/"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg><span>Home</span></a>
+      <a href="/practice-areas.html" class="app-nav-item" data-href="practice-areas"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6v.01M12 8v.01M12 12v.01M12 16v.01M16 8v.01M16 12v.01M16 16v.01"/></svg><span>Practice</span></a>
+      <a href="/contact.html" class="app-nav-item" data-href="contact"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg><span>Contact</span></a>
+    </div>
+  </nav>
+
+  <footer class="footer bg-secondary text-white mt-28 md:block">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <section>
+          <img src="/assets/KINGS%20AQOMPLICE%20K-LOGO%20White.png" alt="Kings Aqomplice" class="logo h-11 w-auto mb-4">
+          <p class="text-sm text-gray-300 leading-relaxed">Strategic legal intelligence. Institutional strength. Precision in practice.</p>
+        </section>
+        <section>
+          <h3 class="font-serif text-sm font-semibold uppercase tracking-wider mb-4">Navigation</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/" class="footer-link text-gray-300 hover:text-white transition-colors">Home</a></li>
+            <li><a href="/about.html" class="footer-link text-gray-300 hover:text-white transition-colors">About</a></li>
+            <li><a href="/practice-areas.html" class="footer-link text-gray-300 hover:text-white transition-colors">Practice Areas</a></li>
+            <li><a href="/insights.html" class="footer-link text-gray-300 hover:text-white transition-colors">Insights</a></li>
+            <li><a href="/contact.html" class="footer-link text-gray-300 hover:text-white transition-colors">Contact</a></li>
+            <li><a href="/admin/login" class="footer-link text-gray-300 hover:text-white transition-colors">Dashboard</a></li>
+          </ul>
+        </section>
+        <section>
+          <h3 class="font-serif text-sm font-semibold uppercase tracking-wider mb-4">Legal</h3>
+          <p class="text-sm text-gray-300">Confidentiality and discretion are paramount. All communications are protected.</p>
+        </section>
+      </div>
+      <div class="mt-16 pt-10 border-t border-white/10">
+        <p class="text-xs text-white/60 text-center tracking-wide">© Kings Aqomplice. All rights reserved. This site does not constitute legal advice.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="chat-widget">
+    <button id="chat-toggle" type="button" class="chat-bubble chat-trigger" aria-expanded="false" aria-controls="chat-panel" aria-label="Open Legal Intelligence chat">
+      <svg id="chat-icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+      <svg id="chat-icon-close" class="hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <div id="chat-overlay" class="chat-overlay" aria-hidden="true">
+      <div id="chat-backdrop" class="chat-backdrop"></div>
+      <div id="chat-panel" class="chat-panel-inner" role="dialog" aria-label="Legal Intelligence Chat">
+      <div class="flex items-center justify-between p-4 border-b border-gray-200 shrink-0">
+        <div><h2 class="font-serif text-lg font-semibold text-primary">Legal Intelligence</h2><p class="text-xs text-secondary mt-1 hidden md:block">Ask a question or begin intake.</p></div>
+        <button id="chat-close" type="button" class="p-2 -mr-2 text-secondary hover:text-primary text-xl" aria-label="Close">✕</button>
+      </div>
+      <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-4 min-h-0 h-64 md:h-64"></div>
+      <div id="chat-quick-actions" class="px-4 pb-3 flex flex-wrap gap-2 shrink-0"></div>
+      <form id="chat-form" class="p-4 border-t border-gray-200 shrink-0">
+        <div id="chat-file-preview" class="mb-2 text-xs text-secondary hidden"></div>
+        <div class="flex flex-wrap gap-2 items-center">
+          <input type="text" id="chat-input" name="message" placeholder="Type your message..." class="flex-1 min-w-0 input-field py-3 md:py-2 text-base md:text-sm">
+          <input type="file" id="chat-file" name="file" class="hidden" accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png" aria-label="Attach file">
+          <button type="button" id="chat-file-btn" class="p-2.5 border border-gray-200 text-secondary hover:text-primary hover:border-primary transition-colors" aria-label="Attach file" title="Attach file">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/></svg>
+          </button>
+          <button type="submit" class="btn-primary">Send</button>
+        </div>
+      </form>
+    </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){var m=document.cookie.match(/ka_csrf=([^;]+)/);var t=m?decodeURIComponent(m[1]):'';var a=document.getElementById('csrf-token'),b=document.getElementById('csrf-token-contact');if(a)a.value=t;if(b)b.value=t;})();
+  </script>
+  <script src="/js/chat.js" defer></script>
+  <script src="/js/app-nav.js" defer></script>
+  <script src="/js/booking.js" defer></script>
+  <script src="/js/scroll-reveal.js" defer></script>
+</body>
+</html>

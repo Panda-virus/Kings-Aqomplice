@@ -1,0 +1,118 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ChatSession {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  state     Json?    @default("{}")
+  branch    String?  @default("general")
+  messages  ChatMessage[]
+  intake    CaseIntake?
+}
+
+model ChatMessage {
+  id        String     @id @default(uuid())
+  sessionId String
+  session   ChatSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  role      String     // "user" | "assistant"
+  content   String
+  createdAt DateTime   @default(now())
+}
+
+model CaseIntake {
+  id          String   @id @default(uuid())
+  sessionId   String   @unique
+  session     ChatSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  email       String
+  fullName    String?
+  phone       String?
+  caseType    String?
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model ConsultationRequest {
+  id          String   @id @default(uuid())
+  fullName    String
+  email       String
+  phone       String
+  preferredDate String?
+  message     String?
+  status      String   @default("pending")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model AdminUser {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  passwordHash String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ContactInquiry {
+  id        String   @id @default(uuid())
+  name      String
+  email     String
+  message   String
+  createdAt DateTime @default(now())
+}
+
+model Client {
+  id            String   @id @default(uuid())
+  name          String
+  email         String?
+  phone         String?
+  caseName      String?
+  caseSummary   String?
+  assignedTo    String?
+  progress      Int      @default(0)
+  source        String   @default("manual")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model CalendarEvent {
+  id          String   @id @default(uuid())
+  title       String
+  startDate   DateTime
+  endDate     DateTime
+  startTime   String?
+  endTime     String?
+  summary     String?
+  type        String   @default("event")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Invoice {
+  id            String   @id @default(uuid())
+  clientName    String
+  serviceRendered String
+  amount        Float
+  status        String   @default("active")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model SiteVisit {
+  id        String   @id @default(uuid())
+  visitedAt DateTime @default(now())
+}
+
+model MemoDocument {
+  id        String   @id @default(uuid())
+  title     String
+  content   String   @default("")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
