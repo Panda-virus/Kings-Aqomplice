@@ -1,0 +1,19 @@
+---
+description: Push completed work to the project GitHub remote
+alwaysApply: true
+---
+
+# GitHub: Kings Aqomplice
+
+- **Remote:** `https://github.com/Lordsi/Kings-Aqomplice-.git`
+- **Branch:** `main`
+- **Repository root:** this folder (`kingsAqomplice-main`, where `package.json` lives).
+
+After completing substantive edits (features, fixes, or non-trivial updates), **commit and push** so GitHub stays in sync:
+
+1. `git status` — review changes
+2. `git add` relevant files (never commit `.env` or secrets)
+3. `git commit -m "Clear, concise message"`
+4. `git push origin main`
+
+If the user only asked for exploration or a one-line tweak, use judgment; for any multi-file or meaningful change, push before considering the task done.
