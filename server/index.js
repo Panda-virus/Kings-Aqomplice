@@ -60,7 +60,7 @@ app.get('/health', async (req, res) => {
   res.json({ status: 'ok', db, timestamp: new Date().toISOString() });
 });
 
-app.use(express.static(path.join(__dirname, '../public'), {
+app.use(express.static(path.join(__dirname, '../www'), {
   extensions: ['html'],
   index: 'index.html',
   maxAge: process.env.NODE_ENV === 'production' ? '1d' : 0,
