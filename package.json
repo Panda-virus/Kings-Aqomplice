@@ -4,7 +4,7 @@
   "description": "Legal intelligence platform for Kings Aqomplice",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Lordsi/Kings-Aqomplice-.git"
+    "url": "https://github.com/Panda-virus/Kings-Aqomplice.git"
   },
   "type": "module",
   "main": "server/index.js",
