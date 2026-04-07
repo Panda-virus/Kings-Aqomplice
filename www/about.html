@@ -7,8 +7,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Kings Aqomplice">
-  <meta name="description" content="Insights — Kings Aqomplice legal perspectives.">
-  <title>Insights | Kings Aqomplice</title>
+  <meta name="description" content="About Kings Aqomplice — Institutional legal practice with strategic intelligence.">
+  <title>About | Kings Aqomplice</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -24,9 +24,9 @@
         <nav aria-label="Main navigation">
           <ul class="flex flex-wrap gap-6 md:gap-8 text-sm font-medium uppercase tracking-wide">
             <li><a href="/" class="nav-link-hover text-secondary hover:text-primary transition-colors">Home</a></li>
-            <li><a href="/about.html" class="nav-link-hover text-secondary hover:text-primary transition-colors">About</a></li>
+            <li><a href="/about.html" class="text-primary border-b-2 border-primary pb-1">About</a></li>
             <li><a href="/practice-areas.html" class="nav-link-hover text-secondary hover:text-primary transition-colors">Practice Areas</a></li>
-            <li><a href="/insights.html" class="text-primary border-b-2 border-primary pb-1">Insights</a></li>
+            <li><a href="/insights.html" class="nav-link-hover text-secondary hover:text-primary transition-colors">Insights</a></li>
             <li><a href="/contact.html" class="nav-link-hover text-secondary hover:text-primary transition-colors">Contact</a></li>
             <li><a href="/admin/login" class="text-accent hover:text-primary font-medium transition-colors">Sign In</a></li>
           </ul>
@@ -38,38 +38,66 @@
   <header class="app-header-mobile">
     <div class="px-4 py-3 flex items-center justify-between">
       <a href="/" class="block"><img src="/assets/KINGS%20AQOMPLICE%20K-LOGO%20Color.png" alt="Kings Aqomplice" class="logo h-10 w-auto"></a>
-      <a href="/admin/login" class="flex items-center justify-center p-2 -mr-2 text-primary hover:text-accent transition-colors" aria-label="Sign in">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-      </a>
+      <button id="mobile-menu-toggle" type="button" class="mobile-hamburger-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu">
+        <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="close-icon-menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="hidden"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
     </div>
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation">
+      <ul>
+        <li><a href="/" class="mobile-menu-link">Home</a></li>
+        <li><a href="/about.html" class="mobile-menu-link is-active">About</a></li>
+        <li><a href="/practice-areas.html" class="mobile-menu-link">Practice Areas</a></li>
+        <li><a href="/insights.html" class="mobile-menu-link">Insights</a></li>
+        <li><a href="/contact.html" class="mobile-menu-link">Contact</a></li>
+        <li><hr class="mobile-menu-divider"></li>
+        <li><a href="/admin/login" class="mobile-menu-link mobile-menu-link-accent">Sign In</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main class="app-main pt-14 md:pt-0">
     <section class="max-w-6xl mx-auto px-6 py-16 bg-primary/5">
-      <h1 class="section-heading scroll-reveal mb-8">Insights</h1>
-      <p class="scroll-reveal scroll-reveal-delay-1 text-secondary max-w-2xl mb-12 leading-relaxed">
-        Structured perspectives on legal developments, regulatory shifts, and strategic considerations. Informational only.
-      </p>
+      <h1 class="section-heading scroll-reveal mb-8">About Kings Aqomplice</h1>
+      <article class="prose prose-lg max-w-3xl">
+        <p class="text-secondary leading-relaxed mb-6">
+          Kings Aqomplice is a legal practice built on institutional strength and strategic intelligence. We serve clients who require precision, authority, and discretion.
+        </p>
+        <p class="text-secondary leading-relaxed mb-6">
+          Our approach is structured. We do not operate as a startup or a high-volume firm. We deliver focused counsel across corporate, commercial, and regulatory matters.
+        </p>
+        <p class="text-secondary leading-relaxed">
+          Every engagement is handled with the same rigor: clear analysis, defined strategy, and controlled execution. Client communications are protected. Confidentiality is non-negotiable.
+        </p>
+      </article>
+    </section>
 
-      <div class="space-y-8">
-        <article class="card scroll-reveal scroll-reveal-delay-1">
-          <time class="text-xs text-secondary uppercase tracking-wider" datetime="2025-02-01">February 2025</time>
-          <h2 class="font-serif text-xl text-primary font-semibold mt-2 mb-3">Corporate Governance: Current Priorities</h2>
-          <p class="text-secondary leading-relaxed">Board composition, disclosure requirements, and stakeholder expectations continue to evolve. A structured overview of current governance considerations.</p>
-          <a href="/contact.html" class="inline-block mt-4 link-accent text-sm uppercase tracking-wide">Request briefing →</a>
-        </article>
-        <article class="card scroll-reveal scroll-reveal-delay-2">
-          <time class="text-xs text-secondary uppercase tracking-wider" datetime="2025-01-15">January 2025</time>
-          <h2 class="font-serif text-xl text-primary font-semibold mt-2 mb-3">Regulatory Compliance: Framework Updates</h2>
-          <p class="text-secondary leading-relaxed">Key regulatory changes affecting commercial operations. Compliance strategy requires periodic review and adjustment.</p>
-          <a href="/contact.html" class="inline-block mt-4 link-accent text-sm uppercase tracking-wide">Request briefing →</a>
-        </article>
-        <article class="card scroll-reveal scroll-reveal-delay-3">
-          <time class="text-xs text-secondary uppercase tracking-wider" datetime="2024-12-01">December 2024</time>
-          <h2 class="font-serif text-xl text-primary font-semibold mt-2 mb-3">Commercial Contracts: Risk Allocation</h2>
-          <p class="text-secondary leading-relaxed">Structured approaches to risk allocation in commercial agreements. Clear terms reduce dispute potential.</p>
-          <a href="/contact.html" class="inline-block mt-4 link-accent text-sm uppercase tracking-wide">Request briefing →</a>
-        </article>
+    <section class="bg-white border-y border-primary/20 py-16 shadow-[inset_0_2px_8px_rgba(92,6,1,0.03)]">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="section-heading scroll-reveal mb-12">Our Principles</h2>
+        <ul class="space-y-6 max-w-2xl">
+          <li class="flex gap-4">
+            <span class="text-accent font-serif text-2xl">I.</span>
+            <div>
+              <h3 class="font-serif text-lg font-semibold text-primary mb-1">Structured Analysis</h3>
+              <p class="text-secondary text-sm leading-relaxed">Methodical evaluation. No assumptions. Evidence-based counsel.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="text-accent font-serif text-2xl">II.</span>
+            <div>
+              <h3 class="font-serif text-lg font-semibold text-primary mb-1">Strategic Control</h3>
+              <p class="text-secondary text-sm leading-relaxed">Clear decision points. Defined outcomes. Measured execution.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="text-accent font-serif text-2xl">III.</span>
+            <div>
+              <h3 class="font-serif text-lg font-semibold text-primary mb-1">Institutional Discipline</h3>
+              <p class="text-secondary text-sm leading-relaxed">Consistent standards. Documented processes. Accountability.</p>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
   </main>

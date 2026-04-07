@@ -7,8 +7,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Kings Aqomplice">
-  <meta name="description" content="Contact Kings Aqomplice — Request consultation or inquiry.">
-  <title>Contact | Kings Aqomplice</title>
+  <meta name="description" content="Insights — Kings Aqomplice legal perspectives.">
+  <title>Insights | Kings Aqomplice</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -26,8 +26,8 @@
             <li><a href="/" class="nav-link-hover text-secondary hover:text-primary transition-colors">Home</a></li>
             <li><a href="/about.html" class="nav-link-hover text-secondary hover:text-primary transition-colors">About</a></li>
             <li><a href="/practice-areas.html" class="nav-link-hover text-secondary hover:text-primary transition-colors">Practice Areas</a></li>
-            <li><a href="/insights.html" class="nav-link-hover text-secondary hover:text-primary transition-colors">Insights</a></li>
-            <li><a href="/contact.html" class="text-primary border-b-2 border-primary pb-1">Contact</a></li>
+            <li><a href="/insights.html" class="text-primary border-b-2 border-primary pb-1">Insights</a></li>
+            <li><a href="/contact.html" class="nav-link-hover text-secondary hover:text-primary transition-colors">Contact</a></li>
             <li><a href="/admin/login" class="text-accent hover:text-primary font-medium transition-colors">Sign In</a></li>
           </ul>
         </nav>
@@ -38,72 +38,50 @@
   <header class="app-header-mobile">
     <div class="px-4 py-3 flex items-center justify-between">
       <a href="/" class="block"><img src="/assets/KINGS%20AQOMPLICE%20K-LOGO%20Color.png" alt="Kings Aqomplice" class="logo h-10 w-auto"></a>
-      <a href="/admin/login" class="flex items-center justify-center p-2 -mr-2 text-primary hover:text-accent transition-colors" aria-label="Sign in">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-      </a>
+      <button id="mobile-menu-toggle" type="button" class="mobile-hamburger-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu">
+        <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="close-icon-menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="hidden"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
     </div>
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation">
+      <ul>
+        <li><a href="/" class="mobile-menu-link">Home</a></li>
+        <li><a href="/about.html" class="mobile-menu-link">About</a></li>
+        <li><a href="/practice-areas.html" class="mobile-menu-link">Practice Areas</a></li>
+        <li><a href="/insights.html" class="mobile-menu-link is-active">Insights</a></li>
+        <li><a href="/contact.html" class="mobile-menu-link">Contact</a></li>
+        <li><hr class="mobile-menu-divider"></li>
+        <li><a href="/admin/login" class="mobile-menu-link mobile-menu-link-accent">Sign In</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main class="app-main pt-14 md:pt-0">
     <section class="max-w-6xl mx-auto px-6 py-16 bg-primary/5">
-      <h1 class="section-heading scroll-reveal mb-8">Contact</h1>
+      <h1 class="section-heading scroll-reveal mb-8">Insights</h1>
       <p class="scroll-reveal scroll-reveal-delay-1 text-secondary max-w-2xl mb-12 leading-relaxed">
-        Request a consultation or submit an inquiry. All communications are confidential. We will respond within 2 business days.
+        Structured perspectives on legal developments, regulatory shifts, and strategic considerations. Informational only.
       </p>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <section>
-          <h2 class="font-serif text-xl text-primary font-semibold mb-6">Consultation Request</h2>
-          <form id="consultation-form" action="/api/booking" method="POST" class="space-y-4">
-            <input type="hidden" name="_csrf" id="csrf-token" value="">
-            <div>
-              <label for="fullName" class="block text-sm font-medium text-secondary mb-1">Full Name</label>
-              <input type="text" id="fullName" name="fullName" required class="input-field" placeholder="Full legal name">
-            </div>
-            <div>
-              <label for="email" class="block text-sm font-medium text-secondary mb-1">Email</label>
-              <input type="email" id="email" name="email" required class="input-field" placeholder="email@example.com">
-            </div>
-            <div>
-              <label for="phone" class="block text-sm font-medium text-secondary mb-1">Phone</label>
-              <input type="tel" id="phone" name="phone" required class="input-field" placeholder="+1 (555) 000-0000">
-            </div>
-            <div>
-              <label for="preferredDate" class="block text-sm font-medium text-secondary mb-1">Preferred Date</label>
-              <input type="date" id="preferredDate" name="preferredDate" class="input-field">
-            </div>
-            <div>
-              <label for="message" class="block text-sm font-medium text-secondary mb-1">Message</label>
-              <textarea id="message" name="message" rows="4" class="input-field" placeholder="Brief description of your matter"></textarea>
-            </div>
-            <button type="submit" class="btn-primary" id="consultation-submit">Submit Request</button>
-          </form>
-          <p id="form-feedback" class="mt-4 text-sm hidden"></p>
-          <noscript>
-            <p class="mt-4 text-sm text-secondary">Form submits to server. You will be redirected after submission.</p>
-          </noscript>
-        </section>
-
-        <section>
-          <h2 class="font-serif text-xl text-primary font-semibold mb-6">General Inquiry</h2>
-          <form id="contact-form" action="/api/contact" method="POST" class="space-y-4">
-            <input type="hidden" name="_csrf" id="csrf-token-contact" value="">
-            <div>
-              <label for="contactName" class="block text-sm font-medium text-secondary mb-1">Name</label>
-              <input type="text" id="contactName" name="name" required class="input-field" placeholder="Your name">
-            </div>
-            <div>
-              <label for="contactEmail" class="block text-sm font-medium text-secondary mb-1">Email</label>
-              <input type="email" id="contactEmail" name="email" required class="input-field" placeholder="email@example.com">
-            </div>
-            <div>
-              <label for="contactMessage" class="block text-sm font-medium text-secondary mb-1">Message</label>
-              <textarea id="contactMessage" name="message" rows="4" required class="input-field" placeholder="How can we help?"></textarea>
-            </div>
-            <button type="submit" class="btn-primary" id="contact-submit">Send Inquiry</button>
-          </form>
-          <p id="contact-feedback" class="mt-4 text-sm hidden"></p>
-        </section>
+      <div class="space-y-8">
+        <article class="card scroll-reveal scroll-reveal-delay-1">
+          <time class="text-xs text-secondary uppercase tracking-wider" datetime="2025-02-01">February 2025</time>
+          <h2 class="font-serif text-xl text-primary font-semibold mt-2 mb-3">Corporate Governance: Current Priorities</h2>
+          <p class="text-secondary leading-relaxed">Board composition, disclosure requirements, and stakeholder expectations continue to evolve. A structured overview of current governance considerations.</p>
+          <a href="/contact.html" class="inline-block mt-4 link-accent text-sm uppercase tracking-wide">Request briefing →</a>
+        </article>
+        <article class="card scroll-reveal scroll-reveal-delay-2">
+          <time class="text-xs text-secondary uppercase tracking-wider" datetime="2025-01-15">January 2025</time>
+          <h2 class="font-serif text-xl text-primary font-semibold mt-2 mb-3">Regulatory Compliance: Framework Updates</h2>
+          <p class="text-secondary leading-relaxed">Key regulatory changes affecting commercial operations. Compliance strategy requires periodic review and adjustment.</p>
+          <a href="/contact.html" class="inline-block mt-4 link-accent text-sm uppercase tracking-wide">Request briefing →</a>
+        </article>
+        <article class="card scroll-reveal scroll-reveal-delay-3">
+          <time class="text-xs text-secondary uppercase tracking-wider" datetime="2024-12-01">December 2024</time>
+          <h2 class="font-serif text-xl text-primary font-semibold mt-2 mb-3">Commercial Contracts: Risk Allocation</h2>
+          <p class="text-secondary leading-relaxed">Structured approaches to risk allocation in commercial agreements. Clear terms reduce dispute potential.</p>
+          <a href="/contact.html" class="inline-block mt-4 link-accent text-sm uppercase tracking-wide">Request briefing →</a>
+        </article>
       </div>
     </section>
   </main>
@@ -116,7 +94,7 @@
     </div>
   </nav>
 
-  <footer class="footer bg-secondary text-white mt-28 md:block">
+  <footer class="footer bg-secondary text-white mt-28">
     <div class="max-w-6xl mx-auto px-6 py-16">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
         <section>
@@ -174,12 +152,8 @@
     </div>
   </div>
 
-  <script>
-    (function(){var m=document.cookie.match(/ka_csrf=([^;]+)/);var t=m?decodeURIComponent(m[1]):'';var a=document.getElementById('csrf-token'),b=document.getElementById('csrf-token-contact');if(a)a.value=t;if(b)b.value=t;})();
-  </script>
   <script src="/js/chat.js" defer></script>
   <script src="/js/app-nav.js" defer></script>
-  <script src="/js/booking.js" defer></script>
   <script src="/js/scroll-reveal.js" defer></script>
 </body>
 </html>
